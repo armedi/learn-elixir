@@ -1,15 +1,7 @@
 defmodule Dictionary do
-  @spec random_word :: binary
-  def random_word do
-    words_list()
-    |> Enum.random()
-  end
+  alias Dictionary.WordList
 
-  @spec words_list :: [binary]
-  def words_list do
-    "../assets/words.txt"
-    |> Path.expand(__DIR__)
-    |> File.read!()
-    |> String.split(~r/\n/)
-  end
+  defdelegate start, to: WordList, as: :words_list
+
+  defdelegate random_word(words), to: WordList
 end
