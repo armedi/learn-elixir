@@ -10,10 +10,10 @@ use Mix.Config
 # Configures the endpoint
 config :gallows, GallowsWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "OdaJG+Dph650ruW1J96poz4FpoQgfcIGbjj+NduCO96X8Qp4KGNRemUUmG4J7rF0",
+  secret_key_base: "bh3A5Y7oTsbMIW4c/XF5QDahUESo2fxFyKxrDmxliNx5MG1ZcpPu6DMCICDBsBXP",
   render_errors: [view: GallowsWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Gallows.PubSub,
-  live_view: [signing_salt: "WuvE6sGP"]
+  live_view: [signing_salt: "qCiqyAFl"]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -22,6 +22,12 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :phoenix,
+       :format_encoders,
+       html: Phoenix.HTML.Engine,
+       svg: Phoenix.HTML.Engine,
+       json: Poison
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

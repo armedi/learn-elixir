@@ -7,7 +7,7 @@ defmodule GallowsWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_gallows_key",
-    signing_salt: "oCLDysi4"
+    signing_salt: "nJr4FcO+"
   ]
 
   socket "/socket", GallowsWeb.UserSocket,
